@@ -1,9 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-      const $notification = $delete.parentNode;
-  
-      $delete.addEventListener('click', () => {
-        $notification.parentNode.removeChild($notification);
-      });
-    });
-});
+function changeUrl(selected) {
+    document.location.href = "http://localhost:9000/equipage?id=" + selected;
+}
