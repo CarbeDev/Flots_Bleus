@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head
+  th:replace="htmlpagelien/pageslien :: headerlien">
+</head>
+
+<body>
+
+   
+    <!--Header Start-->
+    <header>
+         
+        <div th:insert="htmlpagelien/pageslien :: navbarlien"></div>
+    </header>
+    <!--Header End th:each="voilier: ${voiliers}-->
+<main id="main">
+<section id="about" class="about mt-5">
+            <div class="container-fluid">
+            <p>L’association <strong> « Flots Bleus »</strong> organise différentes courses de voilier durant l’année. </p>
+            <p>L’association <strong>« Flots Bleus » </strong>est constituée d’un président, d’un secrétaire, d’une trésorière et de plusieurs bénévoles.</p>
+           </div>
+           </section>
+   </main> 
+     <!-- Footer -->
+        <footer >
+          <div th:insert= "htmlpagelien/pageslien :: footerlien"></div>
+           </footer>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="htmlpagelien/pageslien::headerlien"> </head>
+
+  <body>
+    <header>
+      <img />
+      <h1>Flots Bleus</h1>
+      <p>admin infos</p>
+    </header>
+    <nav>
+      <ul>
+        <li>Aaaaaaaa</li>
+        <li>Aaaaaaaa</li>
+        <li>Aaaaaaaa</li>
+        <li>Aaaaaaaa</li>
+        <li>Aaaaaaaa</li>
+        <li>Aaaaaaaa</li>
+      </ul>
+    </nav>
+    <main>
+      <table class="table table-striped text-center w-100">
+        <tr>
+          <th>Prenom</th>
+          <th>Nom</th>
+          <th>Age</th>
+          <th>Role</th>
+        </tr>
+        <!--Il faudra refaire un for each qui irra chercher les info des personnes -->
+        <!--<tr th:each="equipage: ${equipages}">
+                <td th:text="${personne.prenom}"></td>
+                <td th:text="${personne.nom}"></td>
+                <td th:text="${personne.dateNaissance}"></td>
+                <td th:text="${personne.role.nom}"></td>
+            </tr>-->
+      </table>
+    </main>
+  </body>
+</html>
