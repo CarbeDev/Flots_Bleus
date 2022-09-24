@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:include="/fragments/admin_fragment :: header"></head>
+    <body>
+        <div class="columns">
+            <div class="column is-2">
+                <div th:include="/fragments/admin_fragment :: lateral_menu"></div>
+            </div>
+            <div class="column is-9">
+                <div th:include="/fragments/admin_fragment :: tableau (titres = ${titres}, objets= ${objets})"></div>
+            </div>
+        </div>
+
+        <div th:include="/fragments/admin_fragment :: modalAjout(type = ${type},titres = ${titres}, attributs = ${attributs}, newObject = ${newObject})"></div>
+        <script th:src="@{/js/modal.js}"></script>
+    </body>
+</html>

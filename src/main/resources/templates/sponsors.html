@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Flots bleus</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+
+        <h1 class="is-midnightblue title is-1 ">Les sponsors</h1>
+
+        <div class="is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
+            <div th:each="sponsor: ${sponsors}">
+                    <div class="card">
+
+                        <div class="card-image">
+                            <figure class="image">
+                                <img th:src="@{${'/img/logo/' + sponsor.logo}}">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-3" th:text="${sponsor.nom}"></p>
+                            <p><a th:href="@{${'voilier/' + sponsor.voilier.nom}}" th:text="${sponsor.voilier.nom}"></a></p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+   </body>
+</html>
