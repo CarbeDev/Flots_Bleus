@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Flots bleus</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    </head>
+    <body>
+        <section class="hero is-fullheight">
+            <div class="hero-body">
+              <div class="container">
+                <div class="columns is-centered">
+                  <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+
+                    <div class="notification is-danger is-light" th:if="${erreur != null}">
+                        <button class="delete"></button>
+                        <span th:text="${erreur}"></span>
+                    </div>
+
+                    <div class="notification is-info is-light" th:if="${info != null}">
+                      <button class="delete"></button>
+                      <span th:text="${info}"></span>
+                  </div>
+
+                    <form th:action="@{/admin}" method="post" class="box">
+
+                      <div class="field">
+                        <label for="" class="label">Identifiant</label>
+                        <div class="control">
+                          <input name="identifiant" type="text" placeholder="nomprenom" class="input" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label for="" class="label">Mot de passe</label>
+                        <div class="control">
+                          <input name="mdp" type="password" placeholder="*******" class="input" required>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <button class="button is-success">
+                          Login
+                        </button>
+                      </div>
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <script th:src="@{/js/script.js}"></script>
+    </body>
+</html>

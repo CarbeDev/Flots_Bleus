@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:include="/fragments/admin_fragment :: header"></head>
+    <body>
+        <div class="columns">
+            <div class="column is-3">
+                <div th:include="/fragments/admin_fragment :: lateral_menu"></div>
+            </div>
+        </div>
+        <script th:src="@{/js/script.js}"></script>
+    </body>
+</html>

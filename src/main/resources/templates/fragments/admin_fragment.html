@@ -1,0 +1,86 @@
+<head th:fragment="header">
+    <meta charset="UTF-8" />
+    <title>Flots bleus | Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+
+<div th:fragment="lateral_menu">
+    <div class="has-background-dark has-text-light">
+        <aside class="menu">
+
+            <p th:text="${identifiant}"></p>
+            <a th:href="@{/admin/deconnexion}" class="has-text-white">Se déconnecter</a>
+
+                <p class="menu-label">Courses</p>
+                <ul class="menu-list">
+                    <li><a th:href="@{/admin/courses}">Courses</a></li>
+                    <li><a th:href="@{/admin/epreuves}">Epreuves</a></li>
+                    <li><a href="@{/admin/type_penalite}">Type de pénalités</a></li>
+                </ul>
+                
+                <p class="menu-label">Voiliers</p>
+                <ul class="menu-list">
+                    <li><a th:href="@{/admin/voiliers}">Voiliers</a></li>
+                    <li><a th:href="@{/admin/sponsors}">Sponsors</a></li>
+                    <li><a th:href="@{/admin/type_voilier}">Type de voiliers</a></li>
+                </ul>
+                
+                <p class="menu-label">Equipages</p>
+                <ul class="menu-list">
+                    <li><a th:href="@{/admin/courses}">Equipages</a></li>
+                    <li><a th:href="@{/admin/membres}">Membres</a></li>
+                    <li><a th:href="@{/admin/role_membre}">Roles de membres</a></li>
+                </ul>
+                
+                <p class="menu-label">Autre</p>
+                <ul class="menu-list">
+                    <li><a th:href="@{/admin/}">Admin</a></li>
+                </ul>
+
+        </aside>
+    </div>
+</div>
+
+<div th:fragment="tableau (titres,objets)">
+    <button class="js-modal-trigger button is-success" data-target="modalAjout">Ajouter +</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <td th:each="titre : ${titres}" th:text="${titre}"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="objet : ${objets}">
+                <td th:each="value : ${objet.getAttributesValues()}" th:text="${value}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:fragment="modalAjout(type,titres,attributs,newObject)">
+    <div class="modal" id="modalAjout">
+        <div class="modal-background"></div>
+        <div class="modal-content has-background-white">
+            <form th:action="@{${'/admin/' + type + '/ajout'}}" method="post" class="box" th:object="${newObject}">
+                <div th:each="attribut, stat : ${attributs}" th:if="${titres[stat.index]} != 'id'">
+                    <div class="field">
+                        <label class="label" th:text="${titres[stat.index]}"></label>
+                        <div class="control" th:switch="${attribut}">
+                            <input th:name="${titres[stat.index]}" class="input" type="text" th:case="'String'">
+                            <input th:name="${titres[stat.index]}" type="number" th:case="*">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="field">
+                    <div class="control">
+                    <button class="button is-link" type="submit">Ajouter</button>
+                    </div>
+                </div>   
+            </form>
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+</div>

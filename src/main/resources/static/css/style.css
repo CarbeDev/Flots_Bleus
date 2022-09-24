@@ -1,0 +1,12 @@
+body{
+    background-color: #91a6ff;
+}
+
+.is-midnightblue{
+    color: #000f52;
+}
+
+.menu-list a {
+    color: unset;
+}
+
