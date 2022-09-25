@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/equipage.css}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>Equipages</title>
+    <link rel="stylesheet" th:href="@{equipage.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
+    <!--Google Fonts-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+
+    <title>Equipage</title>
 </head>
 
 <body>
-    <header class="has-background-info has-text-light">
-        <div class="is-flex is-justify-content-center p-6">
-            <figure class="image is-96x96">
-                <img src="../../static/images/logo.png" alt="logo">
-            </figure>
-            <h1>Flots bleus</h1>
+    <header>
+        <!-- Séparation du logo et du titre h1 -->
+        <div class="logotitle">
+            <img th:src="@{/images/logo.png}" alt="Logo">
+            <h1>FLOTS BLEUS</h1>
         </div>
+        <!-- Barre de navigation isoler du titre et du logo -->
+        <nav class="p-2">
+            <ul>
+                <li><button class="button">Accueil</button></li>
+                <li><button class="button">Voiliers</button></li>
+                <li><button class="button">Course</button></li>
+                <li><button class="button">Equipage</button></li>
+                <li><button class="button">Sponsors</button></li>
+                <li><button class="button">Qui sommes nous</button></li>
+            </ul>
+        </nav>
     </header>
-    <nav class="is-flex is-justify-content-space-between has-background-warning has-text-light p-2">
-        <a class="navbar-item">
-            Acceuil </a>
-        <a class="navbar-item">
-            Equipages
-        </a>
-        <a class="navbar-item">
-            Voiliers
-        </a>
-        <a class="navbar-item">
-            Courses
-        </a>
-        <a class="navbar-item">
-            Qui sommes nous
-        </a>
-    </nav>
+    <main>
+        <!-- Separation du titre h2 et du from select du main pour favoriser affichage  -->
+        <div class="equipe">
+            <h2>Nom des Equipes :</h2>
+            <!-- <h3 th:text="${equipage.nom}"></h3> -->
+            <select class="form-select form-select w-25 " aria-label="Sélectioner une Equipe">
+                <option selected>Select team</option>
+                <option th:each="values:${equipages}" th:text="${values.nom}" th href="${equipage}"></option>
+
+
+            </select>
+        </div>
+
+
+        <div>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Prenom</th>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Role</th>
+                </tr>
+                <tr th:each="personne : ${equipage.personnes}">
+                    <td th:text="${personne.prenom}"></td>
+                    <td th:text="${personne.nom}"></td>
+                    <td th:text="${personne.dateNaissance}"></td>
+                    <td th:text="${personne.role.nom}"></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>copyright Flots Bleus</p>
+    </footer>
 </body>
 
 </html>
