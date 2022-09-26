@@ -9,8 +9,8 @@
 body {
     padding: 0px;
     margin: 0px;
-    background: brown;
-    position: relative;
+    background: #ffffff;
+    
 }
 
 header {
@@ -30,14 +30,14 @@ h2 {
 
 }
 
-ul {
+/* ul {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
     gap: 15px;
 
 
-}
+} */
 
 button:hover {
     color: #F4A261;
@@ -79,14 +79,14 @@ main {
 
 }
 
-table {
+/* table {
     border-collapse: collapse;
     padding: 10px;
     text-align: center;
     box-shadow: 1px 1px 5px grey;
 
 
-}
+} */
 
 td,
 th {
@@ -106,6 +106,9 @@ footer {
     display: flex;
     justify-content: center;
     padding: 10px;
+    background-color: #40698C;
+    color:#ffffff;
+    text-align: center;
 }
 
 
@@ -122,6 +125,7 @@ footer {
 
 .equipe {
     display: flex;
+    justify-content: center;
     margin: 15px;
     gap: 15px;
 }
