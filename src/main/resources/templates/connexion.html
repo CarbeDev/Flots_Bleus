@@ -27,16 +27,18 @@
                       <div class="field">
                         <label for="" class="label">Identifiant</label>
                         <div class="control">
-                          <input name="identifiant" type="text" placeholder="nomprenom" class="input" required>
+                          <input name="username" type="text" placeholder="nomprenom" class="input" required>
                         </div>
                       </div>
 
                       <div class="field">
                         <label for="" class="label">Mot de passe</label>
                         <div class="control">
-                          <input name="mdp" type="password" placeholder="*******" class="input" required>
+                          <input name="password" type="password" placeholder="*******" class="input" required>
                         </div>
                       </div>
+
+                      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 
                       <div class="field">
                         <button class="button is-success">

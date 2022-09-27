@@ -1,33 +1,29 @@
 package com.simplon.course_voilier.service;
 
-import java.util.Optional;
+import java.util.HashSet;
 
-import javax.annotation.Resource;
-
-import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.simplon.course_voilier.model.Admin;
 import com.simplon.course_voilier.repository.AdminRepo;
 
 @Service
-public class AdminService {
+public class AdminService implements UserDetailsService{
 
 	@Autowired
 	AdminRepo ar;
-
-	@Resource(name = "cryptor")
-	StandardPBEStringEncryptor decryptor;
 	
-	public Admin connexion(String username, String password) {
+	@Override
+	public UserDetails loadUserByUsername(String id) {
 		
-		Optional<Admin> admin = ar.findById(username);
-		if(admin.isPresent()) {
-	        return password.equals(decryptor.decrypt(admin.get().getMdp())) ? admin.get() : null;
-		}
-		else {
-			return null;
-		}
+		Admin admin = ar.findByIdentifiant(id);
+		if(admin == null) throw new UsernameNotFoundException(id);
+		
+		return new org.springframework.security.core.userdetails.User(admin.getIdentifiant(), admin.getMdp(), new HashSet<>());
 	}
+	
 }
