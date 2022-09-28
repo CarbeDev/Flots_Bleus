@@ -7,5 +7,5 @@ import com.simplon.course_voilier.model.Admin;
 
 @Repository
 public interface AdminRepo extends CrudRepository<Admin, String>{
-	Admin findByIdentifiant(String identifiant);
+	Admin findByIdentifiant(String id);
 }
