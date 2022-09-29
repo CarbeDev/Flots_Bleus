@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.simplon.course_voilier.model.TypeVoilier;
 import com.simplon.course_voilier.model.Voilier;
@@ -25,7 +26,7 @@ public class VoilierController {
 	public String adminVoilier(Model model) {
 		model.addAttribute("type", "voiliers");
 		model.addAttribute("titres", Voilier.getAttributes());
-		model.addAttribute("objets", vs.getAllVoilier());
+		model.addAttribute("objets", vs.getAllVoiliers());
 		model.addAttribute("attributs", Voilier.getAttributesType());
 		model.addAttribute("newObject", new Voilier());
 		return "gestion";
@@ -55,5 +56,13 @@ public class VoilierController {
 		
 		return "redirect:/admin/type_voilier";
 	}
+
 	
-}
+	@GetMapping("voiliers")
+		public String getvoiliers( Model model){
+			model.addAttribute("objets", vs.getAllVoiliers());
+			return "publicTemplates/voiliers";
+		}
+	}
+
+
