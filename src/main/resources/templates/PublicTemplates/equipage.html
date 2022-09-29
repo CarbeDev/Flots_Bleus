@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head th:include="fragments/publicfragments :: head"></head>
+    <!-- <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" th:href="@{equipage.css}"> -->
-    <link rel="stylesheet" href="../../static/css/equipage.css" />
+     <link rel="stylesheet" th:href="@{equipage.css}"> -->
+    <!-- <link rel="stylesheet" href="../../static/css/equipage.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 
     <title>Equipage</title>
-  </head>
+  </head> -->
 
-  <!-- Header fragemnte -->
+  <!-- Header fragments -->
 
   <body>
-    <header>
-      <div class="is-flex logotitle">
+    <!-- <head th:include="fragments/publicfragments :: head"></head> -->
+    <header th:include="fragments/publicfragments :: header"></header>
+    
+       <!-- <div class="is-flex logotitle">
         <img th:src="@{/images/logo.png}" alt="Logo" />
         <h1>FLOTS BLEUS</h1>
-      </div>
+      </div> -->
 
-      <nav>
+      <!-- <nav>
         <ul class="is-flex is-justify-content-space-between p-5">
           <li>Acceuil</li>
           <li>Voiliers</li>
@@ -31,15 +33,19 @@
           <li>Sponsors</li>
           <li>Qui sommes nous</li>
         </ul>
-      </nav>
-    </header>
-    <main>
+      </nav> 
+    </header> -->
+    <main class="p-6">
       <!-- Separation du titre h2 et du from select du main pour favoriser affichage  -->
-      <div class="equipe">
-        <h2>Nom des Equipes :</h2>
+      <!-- <div class="equipe">
+        <h2>Nom des Equipes :</h2> -->
         <!-- <h3 th:text="${equipage.nom}"></h3> -->
+      <h2 class="is-flex is-justify-content-center p-4 is-size-2">Liste des équipes</h2>
+      <h3 class="p-3 is-size-3">Info sur les Participants:</h3>
+      
+
         <select
-          class="form-select form-select w-25"
+          class="form-select form-select p-2"
           aria-label="Sélectioner une Equipe">
           <option selected>Select team</option>
           <option
@@ -52,7 +58,7 @@
 
       <div>
         <table
-          class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth p-3">
+          class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth p-6">
           <tr>
             <th>Prenom</th>
             <th>Nom</th>
@@ -69,10 +75,10 @@
       </div>
     </main>
 
-    <footer>
+    <footer th:include="fragments/publicfragments :: footer"></footer>
       <!-- Logo des sponsors -->
 
-      <div class="is-flex is-justify-content-space-between p-3">
+      <!-- <div class="is-flex is-justify-content-space-between p-3">
         <img
           class="image is-96x96"
           src="../../static/images/figaro.png"
@@ -89,11 +95,11 @@
           class="image is-96x96"
           src="../../static/images/sponsorslogo5.png"
           alt="logo bateau" />
-      </div>
+      </div> -->
 
       <!-- Logo des réseaux sociaux -->
 
-      <div class="is-flex is-flex-direction-row is-justify-content-center p-2">
+      <!-- <div class="is-flex is-flex-direction-row is-justify-content-center p-2">
         <img
           class="image is-48x48"
           src="../../static/img/logo/facebook.png"
@@ -101,15 +107,15 @@
         <img
           class="image is-48x48"
           src="../../static/img/logo/instagram.png"
-          alt="logo facebook" />
+          alt="logo instagram" />
         <img
           class="image is-48x48"
           src="../../static/img/logo/twitter.png"
-          alt="logo facebook" />
+          alt="logo twitter" />
         <img
           class="image is-48x48"
           src="../../static/img/logo/youtube.png"
-          alt="logo facebook" />
+          alt="logo youtube" />
       </div>
 
       <address>
@@ -120,6 +126,6 @@
       <div>
         <span>&copy; Flots Bleus.com</span>
       </div>
-    </footer>
+    </footer> -->
   </body>
 </html>

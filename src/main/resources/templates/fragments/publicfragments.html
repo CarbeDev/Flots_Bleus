@@ -1,0 +1,62 @@
+<!-- Head pages Users -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta charset="UTF-8" />
+    <title>Flots bleus | Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" th:href="@{equipage.css}" />
+    <link rel="stylesheet" th:href="@{/css/equipage.css}" />
+</head>
+
+<!-- Header et Navbar User -->
+<header th:fragment="header">
+    <div class="debut is-flex is-justify-content-space-evenly logotitle p-6 is-align-items-center">
+        <h1 class="is-size-1"
+        >FLOTS BLEUS</h1>
+        <img th:src="@{/images/logo.png}" alt="Logo" />
+    </div>
+<!-- IL va manquer les liens pour les différentes sections -->
+    <nav>
+        <ul class="is-flex is-justify-content-space-evenly p-2">
+            <li>Acceuil</li>
+            <li>Voiliers</li>
+            <li>Course</li>
+            <li>Equipage</li>
+            <li>Sponsors</li>
+            <li>Qui sommes nous</li>
+        </ul>
+    </nav>
+</header>
+
+<!-- footer User -->
+<footer F th:fragment="footer">
+    <div class="is-flex is-justify-content-space-between p-3">
+        <img class="image is-96x96" th:src="@{/images/figaro.png}" alt="logo-figaro" />
+        <img class="image is-96x96" th:src="@{/images/logoSponsors2.png}" alt="logo vendeglobe" />
+        <img class="image is-96x96" th:src="@{/images/sponsorslogo3.png}" alt="logo bateau" />
+        <img class="image is-96x96" th:src="@{/images/sponsorslogo5.png}" alt="logo bateau" />
+    </div>
+
+    <!-- Logo des réseaux sociaux -->
+
+    <div class="is-flex is-flex-direction-row is-justify-content-center  ">
+        <img class="image is-48x48" th:src="@{/img/logo/facebook.png}" alt="logo facebook" />
+        <img class="image is-48x48" th:src="@{/img/logo/instagram.png}" alt="logo instagram" />
+        <img class="image is-48x48" th:src="@{/img/logo/twitter.png}" alt="logo twitter" />
+        <img class="image is-48x48" th:src="@{/img/logo/youtube.png}" alt="logo youtube" />
+    </div>
+
+    <!-- Coordonneés des flots bleus -->
+    <div class="is-flex is-flex-direction-row is-justify-content-center p-4">
+        <address>
+            Association les Flots Bleus 10 rue du Saumon 92700 Colombes France
+            <p>Tel : 01 56 48 39 23</p>
+            <mailto>lesFlotsbleus@gmail.com</mailto>
+            <p>&copy; Flots Bleus.com</p>
+        </address>
+    </div>
+</footer>
+
+</html>
