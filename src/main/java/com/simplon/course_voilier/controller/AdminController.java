@@ -18,18 +18,9 @@ public class AdminController {
 	
 	
 	@GetMapping("/admin/index")
-	public String accueilAdmin(Model model, @CookieValue(value = "identifiant", defaultValue = "none") String id) {
-		
-		if(id.equals("none")) {
-			
-			model.addAttribute("erreur", "Vous devez être connecté pour accéder à cette partie du site");
-			return "connexion";
-			
-		} else {
-			
-			model.addAttribute("identifiant", id);
-			return "accueil_admin";
-		}
+	public String accueilAdmin() {
+
+		return "accueil_admin";
 	}
 	
 

@@ -60,7 +60,8 @@ public class VoilierController {
 	
 	@GetMapping("voiliers")
 		public String getvoiliers( Model model){
-			model.addAttribute("objets", vs.getAllVoiliers());
+			model.addAttribute("voiliers", vs.getAllVoiliers());
+			model.addAttribute("attributs", TypeVoilier.getAttributesType());
 			return "publicTemplates/voiliers";
 		}
 	}

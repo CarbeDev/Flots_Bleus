@@ -8,6 +8,4 @@ dropdown.addEventListener("click", (event) => {
   dropdown.classList.toggle("is-active");
 });
 
-// document.addEventListener("click", () => {
-//   menu.classList.remove("is-active");
-// });
+const desc = longueur;
