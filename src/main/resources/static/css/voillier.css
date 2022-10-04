@@ -1,0 +1,35 @@
+.card {
+    width: 400px; /*1*/
+    background-color:#40698C; /*3*/
+    box-shadow: 0px 5px 20px #999; /*4*/
+    
+  }
+
+  /* .card a { 
+    color: #333; 
+    text-decoration: none;
+  } */
+
+  /* .card:hover .card-image img { 
+    width: 150px;
+    filter: grayscale(0);
+  } */
+  h2,p{
+    color: #F4A261;
+    text-align: center;
+  }
+
+  .dropdown-item{
+    background-color: #F4A261;
+    width: 200px;
+  }
+  .dropdown-content{
+    background-color:#40698C;
+
+  }
+  .card-content{
+    display: flex;
+    gap:15px;
+  }
+
+  

@@ -4,22 +4,23 @@
 
 
 
-
-
 body {
     padding: 0px;
     margin: 0px;
-    background: #ffffff;
+    background:#ffffff;
     
-}
+}  
 
 header {
     box-shadow: 1px 1px 5px grey;
 }
+nav{
+    color:#40698C;
+}
 
 img {
 
-    width: 80px;
+    width: 90px;
     padding: 10px;
 }
 
@@ -45,7 +46,7 @@ button:hover {
 
 
 
-button {
+/* button {
     font-family: 'Roboto', sans-serif;
     background-color: #40698C;
     border-radius: 7px;
@@ -53,7 +54,8 @@ button {
     transition: all 0.5s ease;
     height: 40px;
     box-shadow: 1px 1px 5px grey;
-}
+
+} */
 
 td {
     display: flex;
@@ -104,11 +106,16 @@ th {
 
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 10px;
     background-color: #40698C;
     color:#ffffff;
     text-align: center;
+  
+
+   
+    
 }
 
 
@@ -128,4 +135,7 @@ footer {
     justify-content: center;
     margin: 15px;
     gap: 15px;
+}
+.debut{
+    background-color: #40698C;
 }

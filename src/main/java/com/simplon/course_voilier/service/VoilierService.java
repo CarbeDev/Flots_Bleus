@@ -14,7 +14,7 @@ public class VoilierService {
 	@Autowired
 	VoilierRepo vr;
 	
-	public Iterable<Voilier> getAllVoilier() {
+	public Iterable<Voilier> getAllVoiliers() {
 		return vr.findAll();
 	}
 	
