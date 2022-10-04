@@ -62,13 +62,14 @@
     <div class="modal" id="modalAjout">
         <div class="modal-background"></div>
         <div class="modal-content has-background-white">
-            <form th:action="@{${'/admin/' + type + '/ajout'}}" method="post" class="box" th:object="${newObject}">
+            <form th:action="@{${action}}" method="post" class="box" th:object="${newObject}">
                 <div th:each="attribut, stat : ${attributs}" th:if="${titres[stat.index]} != 'id'">
                     <div class="field">
                         <label class="label" th:text="${titres[stat.index]}"></label>
                         <div class="control" th:switch="${attribut}">
                             <input th:name="${titres[stat.index]}" class="input" type="text" th:case="'String'">
-                            <input th:name="${titres[stat.index]}" type="number" th:case="*">
+                            <input th:name="${titres[stat.index]}" class="input" type="date" th:case="Date">
+                            <input th:name="${titres[stat.index]}" class="input" type="number" th:case="*">
                         </div>
                     </div>
                 </div>

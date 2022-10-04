@@ -11,7 +11,7 @@ public interface Model {
 		ArrayList<String> r = new ArrayList<>();
 		
 		for(Field f : c.getDeclaredFields()){
-			if(!f.getType().getName().contains("List"))
+			if(!(f.getType().getName().contains("List") || f.getType().getName().contains("Key")))
 			r.add(f.getName());
 		}
 		
@@ -23,7 +23,7 @@ public interface Model {
 		
 		for(Field f : c.getDeclaredFields()){
 			String fieldname = f.getType().getTypeName();
-			if(!fieldname.contains("List"))
+			if(!(fieldname.contains("List") || fieldname.contains("Key")))
 			r.add(fieldname.substring(fieldname.lastIndexOf(".")+1));
 		}
 		
