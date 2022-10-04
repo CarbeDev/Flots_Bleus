@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head th:include="fragments/publicfragments :: head"></head>
+
+  <header th:include="fragments/publicfragments :: header"></header>
+
+  <body>
+    <main>
+      <div class="is-flex is-justify-content-center p-2 is-size-2">
+        <h2>
+          Description des Voiliers
+        </h2>
+      </div>
+          
+      <div class=" card-content is-flex is-justify-content-space-between">
+        <div th:each="element : ${voiliers}"class="card p-2">
+          <!-- Image à la une -->
+          <!-- Titre de l'article -->
+          <div class="card-title">
+            <!-- <h2 class="is-size-6">Nom du bateau</h2> -->
+            <p th:text="${element.nom}"class="is-size-6"></p>
+          </div>
+          <div class="card-image image is-3by2">
+            <img src="/images/logo.png " alt="Orange" />
+          </div>
+          <!-- Fin de l'image à la une -->
+
+          <!-- Corp de notre carte -->
+          <div class="card-body">
+            <!-- Date de publication de l'article-->
+            <div class="card-date"></div>
+            <!-- Extrait de l'article -->
+
+            <div class="card-excerpt">
+              <div class="dropdown is-hoverable">
+                <div class="dropdown-trigger">
+                  <button
+                    class="button"
+                    aria-haspopup="true"
+                    aria-controls="dropdown-menu2">
+                    <span>Détails</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                  <div class="dropdown-content">
+                    <div class="dropdown-item">
+                      <ul>
+                        <li th:text="'Longueur' + ' : ' + ${element.longueur} + ' cm ' "></li>
+                        <li th:text="'Largeur' + ' : ' + ${element.largeur} + ' cm ' "></li>
+                        <li th:text="'Année de construction' + ' : ' + ${element. anneeConstruction}"></li>
+                        <li th:text="'Type de voilier' + ' : ' + ${element.type}"></li>
+                        <!-- <li th:text="'Nom de l'équipage' + ' : ' + ${element.nom}"></li> -->
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <footer th:include="fragments/publicfragments :: footer"></footer>
+  </body>
+</html>
