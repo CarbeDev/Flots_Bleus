@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" th:href="@{/css/acceuil.css}" />
+    <title>Acceuil</title>
+</head>
+
+<body>
+    <header class="is-flex is-justify-content-center">
+        <div>
+            <h1 class="is-size-1">FLOTS BLEUS</h1>
+            <img th:src="@{/images/logo.png} " alt="Logo" />
+            <p>"Une mer calme n’a jamais fait un bon marin.”</p>
+            <h2 class="is-size-1">Bienvenue</h2>
+        </div>
+    </header>
+    <nav>
+        <ul class="is-flex is-justify-content-space-evenly p-2">
+            <li>Acceuil</li>
+            <li><a th:href="@{/voiliers}">voilier</a></li>
+            <li>Course</li>
+            <li><a href="#equipage">Equipage</a></li>
+            <li>Sponsors</li>
+        </ul>
+    </nav>
+    <main>
+        <h3 class="is-size-2 p-4">Mais qui sommes Nous ?</h3>
+        <p>
+            L’association <strong> « Flots Bleus »</strong> organise différentes
+            courses de voilier durant l’année.
+        </p>
+        <p>
+            L’association <strong>« Flots Bleus » </strong>est constituée d’un
+            président, d’un secrétaire, d’une trésorière et de plusieurs bénévoles.
+        </p>
+    </main>
+    
+</body>
+
+</html>
