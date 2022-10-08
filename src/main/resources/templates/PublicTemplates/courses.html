@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:include="fragments/publicfragments :: head"></head>
+
+  <body>
+    <header th:include="fragments/publicfragments :: header"></header>
+    <h1 class="is-size-3 is-flex is-justify-content-center p-4">Courses</h1>
+
+    <main>
+      <!-- Section avec Tableau des courses en cours et à venir -->
+      
+
+          <section class="m-3 p-3">
+              <table
+              class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth p-0">
+              <tr>
+                  <th class=" venir p-3 has-text-centered">COURSES A VENIR</th>
+                </tr>
+                <tr th:each="race : ${courses}">
+                    <td th:text="${race.nom}"></td>
+                </tr>
+            </table>
+        </section>
+    
+
+      <section class="m-3 p-3">
+        <table
+          class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth p-0">
+          <tr>
+            <th class="cours p-3 has-text-centered">COURSES EN COUR</th>
+          </tr>
+          <tr th:each="race : ${courses}">
+            <td th:text="${race.nom}"></td>
+          </tr>
+        </table>
+      </section>
+    </main>
+    <footer th:include="fragments/publicfragments :: footer"></footer>
+  </body>
+</html>

@@ -9,13 +9,16 @@
     <link rel="stylesheet" th:href="@{equipage.css}" />
     <link rel="stylesheet" th:href="@{/css/equipage.css}" />
     <link rel="stylesheet" th:href="@{/css/voillier.css}" />
+    <link rel="stylesheet" th:href="@{/css/sponsors.css}" />
+    <link rel="stylesheet" th:href="@{/css/courses.css}"/>
+   
     
 </head>
 
 <!-- Header et Navbar User -->
 <header th:fragment="header">
-    <div class="debut is-flex is-justify-content-space-evenly logotitle p-6 is-align-items-center">
-        <h1 class="is-size-1"
+    <div class="debut is-flex is-justify-content-space-evenly logotitle p-3 is-align-items-center">
+        <h1 class="is-size-3"
         >FLOTS BLEUS</h1>
         <img th:src="@{/images/logo.png}" alt="Logo" />
     </div>
@@ -24,9 +27,9 @@
         <ul class="is-flex is-justify-content-space-evenly p-2">
             <li><a th:href="@{/acceuil}">Acceuil</a></li>
             <li><a th:href="@{/voiliers}">Voiliers</a></li>
-            <li>Course</li>
+            <li><a th:href="@{/courses}">Course</a></li>
             <li><a th:href="@{/equipage?id=1}">Equipage</a></li>
-            <li>Sponsors</li>
+            <li><a th:href="@{/sponsors}">Sponsors</a></li>
      
         </ul>
     </nav>
@@ -51,7 +54,7 @@
     </div>
 
     <!-- Coordonneés des flots bleus -->
-    <div class="is-flex is-flex-direction-row is-justify-content-center p-4">
+    <div class="is-flex is-flex-direction-row is-justify-content-center p-6">
         <address>
             Association les Flots Bleus 10 rue du Saumon 92700 Colombes France
             <p>Tel : 01 56 48 39 23</p>

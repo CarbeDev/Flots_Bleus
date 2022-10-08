@@ -1,17 +1,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
-   <head>
-      <meta charset="UTF-8" />
-      <title>Flots bleus</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-   </head>
+    <html xmlns:th="http://www.thymeleaf.org" lang="en">
+        <head th:include="fragments/publicfragments :: head"></head>
    <body>
+    <header th:include="fragments/publicfragments :: header"></header>
+        <h1 class="is-flex is-justify-content-center is-size-1 ">Les sponsors</h1>
 
-        <h1 class="is-midnightblue title is-1 ">Les sponsors</h1>
-
-        <div class="is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
+        <div class="is-flex is-flex-wrap-wrap is-justify-content-space-evenly p-3 ">
             <div th:each="sponsor: ${sponsors}">
-                    <div class="card">
+                    <div class="cardspons card p-3 ">
 
                         <div class="card-image">
                             <figure class="image">
@@ -25,5 +21,6 @@
                     </div>
             </div>
         </div>
+        <footer th:include="fragments/publicfragments :: footer"></footer>
    </body>
 </html>

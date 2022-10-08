@@ -27,6 +27,18 @@ public class CourseController {
 	@Autowired
 	EpreuveService es;
 	
+	@GetMapping("/courses")
+	public String getAllCourses(Model model) {
+	 model.addAttribute("courses",cs.getAllCourse());
+	 return "publicTemplates/courses";
+	}
+	
+//	@GetMapping("/classement")
+//	public String getClassement(Model model) {
+//	    model.addAttribute("classement,"cs.)
+//	}
+	
+	
 	@GetMapping("/admin/courses")
 	public String getCourses(Model model) {
 		model.addAttribute("type", "courses");
