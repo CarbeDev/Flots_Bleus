@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <link rel="stylesheet" th:href="@{/css/acceuil.css}" />
     <title>Acceuil</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="is-flex is-justify-content-center">
-        <div>
-            <h1 class="is-size-1">FLOTS BLEUS</h1>
-            <a th:href="@{preacceuil}"><img th:src="@{/images/logo.png} " alt="Logo" /></a>
-            <p>"Une mer calme n’a jamais fait un bon marin.”</p>
-            <h2 class="is-size-1">Bienvenue</h2>
-        </div>
+      <div>
+        <h1 class="is-size-1">FLOTS BLEUS</h1>
+        <a th:href="@{preacceuil}"
+          ><img th:src="@{/images/logo.png} " alt="Logo"
+        /></a>
+        <p>"Une mer calme n’a jamais fait un bon marin.”</p>
+        <h2 class="is-size-1">Bienvenue</h2>
+      </div>
     </header>
     <nav>
-        <ul class="is-flex is-justify-content-space-evenly p-2">
-            <li>Acceuil</li>
-            <li><a th:href="@{/voiliers}">voilier</a></li>
-            <li><a th:href="@{/courses}">Courses</a></li>
-            <li><a th:href="@{/}">Equipage</a></li>
-            <li><a th:href="@{/sponsors}">Sponsors</a></li>
-        </ul>
+      <ul class="is-flex is-justify-content-space-evenly p-2">
+        <li>Acceuil</li>
+        <li><a th:href="@{/voiliers}">voilier</a></li>
+        <li><a th:href="@{/courses}">Courses</a></li>
+        <li><a th:href="@{/equipage?id=1}">Equipage</a></li>
+        <li><a th:href="@{/sponsors}">Sponsors</a></li>
+      </ul>
     </nav>
     <main>
-        <h3 class="is-size-2 p-4">Mais qui sommes Nous ?</h3>
-      <P>Fondée en 1991 l"Association Flots Bleus, organise des courses de voilier.
-        Son président Robert Boulard est un passionnée de voile qui a oeuvré pour faire de sa passion son métier.
-        Dans un premier temps au niveau national amateur, puis au fil des années il c'est forgé une solide réputation.
-        Aujourd'hui Flots Bleus est devenu incontournable dans le monde de la courses de voilier amateur mais aussi professionnelle.
-        Mais malgré le succsés Flots Bleus reste une association ou humilité est le maitre mots .
-    </P>
-    <img th:src="@{/images/robBoulard.jpg}" alt="photo du président">
+      <h3 class="is-size-2 p-4">Mais qui sommes Nous ?</h3>
+      <p class="p-4" >
+        Fondée en 1991 l"Association Flots Bleus, organise des courses de
+        voilier. Son président Robert Boulard est un passionnée de voile qui a
+        oeuvré pour faire de sa passion son métier. Dans un premier temps au
+        niveau national amateur, puis au fil des années il c'est forgé une
+        solide réputation. Aujourd'hui Flots Bleus est devenu incontournable
+        dans le monde de la courses de voilier amateur mais aussi
+        professionnelle. Mais malgré le succsés Flots Bleus reste une
+        association ou humilité est le maitre mots .
+      </p>
       
-
     </main>
-    
-</body>
-
+  </body>
 </html>

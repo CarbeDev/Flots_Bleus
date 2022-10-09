@@ -1,35 +1,51 @@
-.cardvoilier {
-    width: 400px; /*1*/
-    background-color:#40698C; /*3*/
-    box-shadow: 0px 5px 20px #999; /*4*/
-    
-  }
+:root {
+  --clr-primary-300: #824936;
+  --ff-primary: "Roboto", sans serif;
+}
 
-  /* .card a { 
+body {
+  font-family: var(--ff-primary);
+}
+
+.container {
+  /* width: 100%;
+  height: 100%; */
+  margin-inline: auto;
+  width: min(100%, 70.5rem);
+  
+}
+
+
+.cardvoilier {
+  width: 400px; /*1*/
+  background-color: #40698c; /*3*/
+  box-shadow: 0px 5px 20px #999; /*4*/
+}
+
+/* .card a { 
     color: #333; 
     text-decoration: none;
   } */
 
-  /* .card:hover .card-image img { 
+/* .card:hover .card-image img { 
     width: 150px;
     filter: grayscale(0);
   } */
-  h2,p{
-    color: #F4A261;
-    text-align: center;
-  }
+h2,
+p {
+  color: #f4a261;
+  text-align: center;
+  font-family: var(--ff-primary);
+}
 
-  .dropdown-item{
-    background-color: #F4A261;
-    width: 200px;
-  }
-  .dropdown-content{
-    background-color:#40698C;
-
-  }
-  .card-content{
-    display: flex;
-    gap:15px;
-  }
-
-  
+.dropdown-item {
+  background-color: #f4a261;
+  width: 200px;
+}
+.dropdown-content {
+  background-color: #40698c;
+}
+.card-content {
+  display: flex;
+  gap: 15px;
+}

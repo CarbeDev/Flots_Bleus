@@ -10,49 +10,52 @@
     <link rel="stylesheet" th:href="@{/css/equipage.css}" />
     <link rel="stylesheet" th:href="@{/css/voillier.css}" />
     <link rel="stylesheet" th:href="@{/css/sponsors.css}" />
-    <link rel="stylesheet" th:href="@{/css/courses.css}"/>
-   
-    
+    <link rel="stylesheet" th:href="@{/css/courses.css}" />
 </head>
 
 <!-- Header et Navbar User -->
 <header th:fragment="header">
-    <div class="debut is-flex is-justify-content-space-evenly logotitle p-3 is-align-items-center">
-        <h1 class="is-size-3"
-        >FLOTS BLEUS</h1>
-        <img th:src="@{/images/logo.png}" alt="Logo" />
-    </div>
-<!-- IL va manquer les liens pour les différentes sections -->
-    <nav>
-        <ul class="is-flex is-justify-content-space-evenly p-2">
-            <li><a th:href="@{/acceuil}">Acceuil</a></li>
-            <li><a th:href="@{/voiliers}">Voiliers</a></li>
-            <li><a th:href="@{/courses}">Course</a></li>
-            <li><a th:href="@{/equipage?id=1}">Equipage</a></li>
-            <li><a th:href="@{/sponsors}">Sponsors</a></li>
-     
-        </ul>
-    </nav>
-</header>
+    <div class="container is-fluid">
 
-<!-- footer User -->
-<footer F th:fragment="footer">
-    <div class="is-flex is-justify-content-space-between p-3">
+        <div class="debut is-flex is-justify-content-space-evenly logotitle p-3 is-align-items-center">
+            <h1 class="is-size-3">FLOTS BLEUS</h1>
+            <img th:src="@{/images/logo.png}" alt="Logo" />
+        </div>
+        <!-- IL va manquer les liens pour les différentes sections -->
+        <div class="container is-fluid is mobile">
+
+            <nav>
+                <ul class="is-flex is-justify-content-space-evenly p-2">
+                    <li><a th:href="@{/acceuil}">Acceuil</a></li>
+                    <li><a th:href="@{/voiliers}">Voiliers</a></li>
+                    <li><a th:href="@{/courses}">Course</a></li>
+                    <li><a th:href="@{/equipage?id=1}">Equipage</a></li>
+                    <li><a th:href="@{/sponsors}">Sponsors</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    
+    <!-- footer User -->
+    <footer F th:fragment="footer">
+        <div class="is-flex is-justify-content-space-between p-3">
         <img class="image is-96x96" th:src="@{/images/figaro.png}" alt="logo-figaro" />
         <img class="image is-96x96" th:src="@{/images/logoSponsors2.png}" alt="logo vendeglobe" />
         <img class="image is-96x96" th:src="@{/images/sponsorslogo3.png}" alt="logo bateau" />
         <img class="image is-96x96" th:src="@{/images/sponsorslogo5.png}" alt="logo bateau" />
     </div>
-
+    
     <!-- Logo des réseaux sociaux -->
-
+    
     <div class="is-flex is-flex-direction-row is-justify-content-center  ">
         <img class="image is-48x48" th:src="@{/img/logo/facebook.png}" alt="logo facebook" />
         <img class="image is-48x48" th:src="@{/img/logo/instagram.png}" alt="logo instagram" />
         <img class="image is-48x48" th:src="@{/img/logo/twitter.png}" alt="logo twitter" />
         <img class="image is-48x48" th:src="@{/img/logo/youtube.png}" alt="logo youtube" />
     </div>
-
+    
     <!-- Coordonneés des flots bleus -->
     <div class="is-flex is-flex-direction-row is-justify-content-center p-6">
         <address>
@@ -64,5 +67,6 @@
     </div>
     <script th:src="@{/js/script.js}"></script>
 </footer>
+</div>
 
 </html>

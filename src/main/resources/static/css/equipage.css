@@ -1,5 +1,13 @@
 /*import*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap');
+
+:root{
+    --clr-primary-300:#824936;
+    --ff-primary:"Roboto",sans serif;
+    --ff-secondary:"Gemunu Libre",sans serif;
+}    
+
 
 
 
@@ -11,11 +19,11 @@ body {
     
 }  
 
-header {
+/* header {
     box-shadow: 1px 1px 5px grey;
-}
+} */
 nav{
-    color:#40698C;
+    color:var(--clr-primary-300);
 }
 
 img {
@@ -26,7 +34,7 @@ img {
 
 h1,
 h2 {
-    font-family: 'Roboto' sans-serif;
+    font-family: var(--ff-primary);
     color: #F4A261;
 
 }
@@ -112,6 +120,7 @@ footer {
     background-color: #40698C;
     color:#ffffff;
     text-align: center;  
+    margin-inline: auto;
 }
 
 

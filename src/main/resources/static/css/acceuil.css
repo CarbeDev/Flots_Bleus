@@ -1,7 +1,16 @@
 img{
-    width: 80px;
+ width:80px;
+}
+
+.captain{
+    width: 90%;
 }
 
 header,h2{
+    text-align: center;
+}
+main{
+    background-color:  #49ADBA;
+    color: #ffffff;
     text-align: center;
 }
