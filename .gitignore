@@ -4,6 +4,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+race.mp4
+robBoulard.jpg
 
 ### STS ###
 .apt_generated

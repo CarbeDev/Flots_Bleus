@@ -1,0 +1,10 @@
+.cardspons {
+    width: A00px; /*1*/
+    background-color:#40698C; /*3*/
+    box-shadow: 0px 5px 20px #999; /*4*/
+}
+    
+.cardspons:hover .card-image img { 
+    width: 150px;
+    filter: grayscale(0);
+  } 

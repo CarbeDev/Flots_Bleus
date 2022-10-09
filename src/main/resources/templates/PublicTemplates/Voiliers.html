@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-  <head th:include="fragments/publicfragments :: head"></head>
 
-  <header th:include="fragments/publicfragments :: header"></header>
+<head th:include="fragments/publicfragments :: head"></head>
+
+<header th:include="fragments/publicfragments :: header"></header>
+
+
+<div class="container is-fluid">
 
   <body>
+
     <main>
-      <div class="is-flex is-justify-content-center p-2 is-size-2">
+      <div class="is-flex is-justify-content-center p-6 is-size-2">
         <h2>
           Description des Voiliers
         </h2>
       </div>
-          
-      <div class=" card-content is-flex is-justify-content-space-between">
-        <div th:each="element : ${voiliers}"class="card p-2">
+
+      <div class="columns is-multiline is-mobile card-content is-flex is-justify-content-space-between">
+        <div th:each="element : ${voiliers}" class="card cardvoilier p-2">
           <!-- Image à la une -->
           <!-- Titre de l'article -->
           <div class="card-title">
             <!-- <h2 class="is-size-6">Nom du bateau</h2> -->
-            <p th:text="${element.nom}"class="is-size-6"></p>
+            <p th:text="${element.nom}" class="is-size-6"></p>
           </div>
           <div class="card-image image is-3by2">
             <img src="/images/logo.png " alt="Orange" />
@@ -34,10 +39,7 @@
             <div class="card-excerpt">
               <div class="dropdown is-hoverable">
                 <div class="dropdown-trigger">
-                  <button
-                    class="button"
-                    aria-haspopup="true"
-                    aria-controls="dropdown-menu2">
+                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
                     <span>Détails</span>
                     <span class="icon is-small">
                       <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -54,15 +56,17 @@
                         <li th:text="'Type de voilier' + ' : ' + ${element.type}"></li>
                         <!-- <li th:text="'Nom de l'équipage' + ' : ' + ${element.nom}"></li> -->
                       </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
     </main>
     <footer th:include="fragments/publicfragments :: footer"></footer>
-  </body>
+</div>
+</body>
+
 </html>
