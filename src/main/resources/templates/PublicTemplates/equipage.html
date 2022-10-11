@@ -56,14 +56,14 @@
         </select>
       </div>
 
-      <div class="p-6">
+      <div class=" p-6">
         <table
           class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth p-0">
           <tr>
             <th class="p-3 has-text-centered">Prenom</th>
             <th class="p-3 has-text-centered">Nom</th>
             <th class="p-3 has-text-centered">Age</th>
-            <th class="p-3 has-text-centered">Role</th>
+            <th class="p-3 has-text-centered">Rôle</th>
           </tr>
           <tr th:each="personne : ${equipage.personnes}">
             <td th:text="${personne.prenom}"></td>
