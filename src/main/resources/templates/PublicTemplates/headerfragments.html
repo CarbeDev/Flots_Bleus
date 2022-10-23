@@ -1,0 +1,63 @@
+<head th:fragment="head">
+  <html>
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+      <html lang="en">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flots bleus | Admin</title>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+        <link rel="stylesheet" th:href="@{equipage.css}" />
+        <link rel="stylesheet" th:href="@{/css/equipage.css}" />
+        <link rel="stylesheet" th:href="@{/css/voillier.css}" />
+        <link rel="stylesheet" th:href="@{/css/sponsors.css}" />
+        <link rel="stylesheet" th:href="@{/css/courses.css}" />
+
+        <!-- Header et Navbar User -->
+        <header th:fragment="header">
+          <div class="is-fullheight">
+            <!-- <div class="debut is-flex is-justify-content-space-evenly logotitle p-3 is-align-items-center"> -->
+            <div class="hero-head">
+              <nav class="navbar cards">
+                <div class="container">
+                  <div class="navbar-brand is-size-4">
+                    <a class="navbar-item">FLOTS BLEUS</a>
+                    <img th:src="@{/images/logo.png}" alt="Logo" />
+                    <span class="navbar-burger" data-target="navbarMenuHeroB">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+
+                    <div id="navbarMenuHeroB" class="navbar-menu">
+                      <div class="navbar-end">
+                        <a class="navbar-item is-active" th:href="@{/acceuil}"
+                          >Acceuil</a
+                        >
+                        <a class="navbar-item" th:href="@{/voiliers}"
+                          >Voiliers</a
+                        >
+                        <a class="navbar-item" th:href="@{/courses}">Course</a>
+                        <a class="navbar-item" th:href="@{/equipage?id=1}"
+                          >Equipage</a
+                        >
+                        <a class="navbar-item" th:href="@{/sponsors}"
+                          >Sponsors</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <script th:src="@{/js/navbar.js}"></script>
+              </nav>
+            </div>
+          </div>
+        </header>
+      </html>
+    </html>
+  </html>
+</head>
