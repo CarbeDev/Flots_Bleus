@@ -1,49 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
   <head th:include="fragments/publicfragments :: head"></head>
-    <!-- <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" th:href="@{equipage.css}"> -->
-    <!-- <link rel="stylesheet" href="../../static/css/equipage.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-
-    <title>Equipage</title>
-  </head> -->
-
   <!-- Header fragments -->
+  <header th:include="fragments/publicfragments :: header"></header>
+  
 
   <body>
-    <!-- <head th:include="fragments/publicfragments :: head"></head> -->
-    <header th:include="fragments/publicfragments :: header"></header>
-    
-       <!-- <div class="is-flex logotitle">
-        <img th:src="@{/images/logo.png}" alt="Logo" />
-        <h1>FLOTS BLEUS</h1>
-      </div> -->
-
-      <!-- <nav>
-        <ul class="is-flex is-justify-content-space-between p-5">
-          <li>Acceuil</li>
-          <li>Voiliers</li>
-          <li>Course</li>
-          <li>Equipage</li>
-          <li>Sponsors</li>
-          <li>Qui sommes nous</li>
-        </ul>
-      </nav> 
-    </header> -->
     <main class="p-6">
       <!-- Separation du titre h2 et du from select du main pour favoriser affichage  -->
-      <!-- <div class="equipe">
-        <h2>Nom des Equipes :</h2> -->
-        <!-- <h3 th:text="${equipage.nom}"></h3> -->
+   
       <h2 class="is-flex is-justify-content-center p-4 is-size-2">Liste des équipes</h2>
       <h3 class="p-3 is-size-3">Info sur les Participants:</h3>
-      
-
+      <div class="selected">
         <select
           class="form-select form-select p-2"
           aria-label="Sélectioner une Equipe">
@@ -76,6 +44,7 @@
     </main>
 
     <footer th:include="fragments/publicfragments :: footer"></footer>
+    <script th:src="@{/js/equipage.js}"></script>
      
   </body>
 </html>

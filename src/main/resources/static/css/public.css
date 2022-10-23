@@ -1,0 +1,126 @@
+/*import*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap");
+
+:root {
+  --clr-primary-300: #40698c;
+  --ff-primary: "Roboto", sans serif;
+  --ff-secondary: "Gemunu Libre", sans serif;
+}
+
+/* ***************************************************************************** */
+/* Logo flotBleus */
+img {
+  width: 90px;
+  padding: 10px;
+}
+/* ***************************************************************************** */
+
+/* Main de toutes les pages  */
+main {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #49adba;
+  padding: 40px;
+  font-family: "Roboto", sans-serif;
+  border: solid 1px #f4a261;
+}
+
+/* ***************************************************************************** */
+
+/* PAGE CARD */
+p {
+  color: #f4a261;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+
+  /* Style des cards */
+}
+.cardvoilier {
+  width: 400px; /*1*/
+  background-color: #40698c; /*3*/
+  box-shadow: 0px 5px 20px #999; /*4*/
+}
+
+.dropdown-item {
+  background-color: #f4a261;
+  width: 200px;
+}
+.dropdown-content {
+  background-color: #40698c;
+}
+.card-content {
+  display: flex;
+  gap: 15px;
+}
+/* ***************************************************************************** */
+
+/*PAGE COURSES */
+
+.venir,
+.cours {
+  box-shadow: 0px 5px 20px #999;
+  text-align: center;
+  background-color: #f4a261;
+}
+.table {
+  box-shadow: 0px 5px 20px #999;
+}
+
+/* ***************************************************************************** */
+
+h1,
+h2 {
+  /* font-family: var(--ff-primary); */
+  color: #f4a261;
+}
+
+button:hover {
+  color: #f4a261;
+}
+
+th {
+  width: 100%;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  justify-content: center;
+}
+
+td,
+tr {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #40698c;
+  color: #ffffff;
+  /* text-align: center; */
+  /* margin-inline: auto; */
+}
+
+
+/* PAGE ACCEUIL */
+
+.section1,.section2{
+    text-align: center;
+}
+ 
+.acceuil-big-logo{
+    width: 40%;
+}
+
+.logo-prime{
+    text-align: center;
+    width: 100%;
+    background-color: #40698c;
+}
