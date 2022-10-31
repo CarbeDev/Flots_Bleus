@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Data
@@ -29,6 +31,7 @@ public class Personne implements Model{
 	private String prenom;
 
 	@Column(name="date_de_naissance")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateNaissance;
 	
 	@ManyToOne

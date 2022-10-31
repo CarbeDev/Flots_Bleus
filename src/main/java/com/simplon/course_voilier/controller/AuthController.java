@@ -20,7 +20,7 @@ public class AuthController {
 		if(erreur)model.addAttribute("erreur", "Mauvais identifiant et/ou mot de passe");
 		if(deco)model.addAttribute("info", "Déconnexion réussie");
 				
-		return "connexion";
+		return "admintemplates/connexion";
 	}
 	
 }

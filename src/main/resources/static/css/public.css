@@ -31,7 +31,7 @@ main {
 
 /* PAGE CARD */
 p {
-  color: #f4a261;
+  color: #ffffff;
   text-align: center;
   font-family: "Roboto", sans-serif;
 
@@ -122,5 +122,18 @@ footer {
 .logo-prime{
     text-align: center;
     width: 100%;
-    background-color: #40698c;
+    background-color:#ffffff;
+}
+
+.h-title{
+  font-weight:bold;
+  font-family: "Roboto", sans-serif;
+  
+}
+
+.p-acceuil{
+  color:black;
+  font-weight: bolder;
+  font-family: "Roboto", sans-serif;
+  
 }

@@ -41,12 +41,12 @@ public class CourseController {
 	
 	@GetMapping("/admin/courses")
 	public String getCourses(Model model) {
-		model.addAttribute("type", "courses");
+		model.addAttribute("action", "courses");
 		model.addAttribute("titres", Course.getAttributes());
 		model.addAttribute("objets", cs.getAllCourse());
 		model.addAttribute("attributs", Course.getAttributesType());
 		model.addAttribute("newObject", new Course());
-		return "gestion";
+		return "adminTemplates/gestion";
 	}
 	
 	@PostMapping("/admin/courses/ajout")
@@ -66,13 +66,13 @@ public class CourseController {
 		Inscription inscription = new Inscription();
 		inscription.setCourse(cs.getCourse(id).get());
 		
-		model.addAttribute("type", "inscription");
+		model.addAttribute("action", "inscription");
 		model.addAttribute("titres", Inscription.getAttributes());
 		model.addAttribute("objets", is.getInscription(id));
 		model.addAttribute("attributs", Inscription.getAttributesType());
 		model.addAttribute("newObject", inscription);
 		
-		return "gestion";
+		return "adminTemplates/gestion";
 	}
 	
 	@GetMapping("/admin/courses/{id}/epreuves")
@@ -90,7 +90,7 @@ public class CourseController {
 		model.addAttribute("attributs", attributs);
 		model.addAttribute("newObject", new Epreuve());
 		
-		return "gestion";
+		return "adminTemplates/gestion";
 	}
 	
 	@PostMapping("admin/courses/{id}/epreuves/ajout")

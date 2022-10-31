@@ -23,12 +23,16 @@ public class WebSecurityConfig {
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/js/**","/css/**").permitAll()
-		.antMatchers("/admin/**").authenticated()
-		.and()
-		.formLogin().loginPage("/admin").defaultSuccessUrl("/admin/index").permitAll()
-		.and()
-		.logout().permitAll();
+		    .antMatchers("/js/**","/css/**").permitAll()
+		    .antMatchers("/admin/**").authenticated()
+		    .and()
+		    .formLogin().loginPage("/admin").defaultSuccessUrl("/admin/index").permitAll()
+		    .and()
+		    .logout().permitAll();
+//	     http.headers()
+//             .xssProtection()
+//             .and()
+//             .contentSecurityPolicy("script-src 'self'");
 		
 		return http.build();
 	}

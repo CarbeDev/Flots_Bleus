@@ -50,7 +50,9 @@
                         <li th:text="'Longueur' + ' : ' + ${element.longueur} + ' cm ' "></li>
                         <li th:text="'Largeur' + ' : ' + ${element.largeur} + ' cm ' "></li>
                         <li th:text="'Année de construction' + ' : ' + ${element. anneeConstruction}"></li>
-                        <li th:text="'Type de voilier' + ' : ' + ${element.type}"></li>
+                        <li th:text="'Type de voilier' + ' : ' + ${element.type.nom}"></li>
+                        <div th:if="sponsors!=null"th:each="sponsor : ${element.entreprise}">
+                        <li th:text="'Entreprise' + ' : ' + ${sponsor.nom}"></li></div>
                         <!-- <li th:text="'Nom de l'équipage' + ' : ' + ${element.nom}"></li> -->
                       </ul>
                     </div>

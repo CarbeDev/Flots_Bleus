@@ -1,0 +1,13 @@
+body{
+    background-color: #49adba;
+}
+
+/* NAVIGATION */
+
+.side-menu{
+    background-color: #40698c;
+}
+
+.menu-list a {
+    color : unset;
+}

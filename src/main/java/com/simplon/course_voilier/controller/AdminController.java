@@ -17,10 +17,9 @@ public class AdminController {
 	
 	@GetMapping("/admin/index")
 	public String accueilAdmin() {
-			return "accueil_admin";
+			return "adminTemplates/accueil_admin";
 	}
 	
-
 	
 	
 	

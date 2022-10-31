@@ -2,9 +2,10 @@
     <head th:include="/fragments/admin_fragment :: header"></head>
     <body>
         <div class="columns">
-            <div class="column is-3">
-                <div th:include="/fragments/admin_fragment :: lateral_menu"></div>
+            <div class="column is-2">
+                <div th:include="/../fragments/admin_fragment :: lateral_menu"></div>
             </div>
+            <main></main>
         </div>
         <script th:src="@{/js/script.js}"></script>
     </body>
