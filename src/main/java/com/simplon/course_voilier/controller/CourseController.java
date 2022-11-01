@@ -58,7 +58,9 @@ public class CourseController {
 	
 	@GetMapping("/admin/courses/{id}")
 	public String updateCourses(@PathVariable int id,Model model) {
-		return "update_course";
+
+        model.addAttribute("course", cs.getCourse(id).get());
+		return "adminTemplates/update_course";
 	}
 	
 	@GetMapping("/admin/courses/{id}/inscription")
