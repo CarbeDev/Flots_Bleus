@@ -28,7 +28,7 @@
                 
                 <p class="menu-label">Equipages</p>
                 <ul class="menu-list">
-                    <li><a th:href="@{/admin/courses}">Equipages</a></li>
+                    <li><a th:href="@{/admin/equipages}">Equipages</a></li>
                     <li><a th:href="@{/admin/membres}">Membres</a></li>
                     <li><a th:href="@{/admin/role_membre}">Roles de membres</a></li>
                 </ul>
@@ -56,6 +56,22 @@
             </tr>
         </tbody>
     </table>
+</div>
+
+<!-- <div th:fragment="tableau (titres,objets)">
+    <button class="js-modal-trigger button is-success" data-target="modalAjout">Modifier +</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <td th:each="titre : ${titres}" th:text="${titre}"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="objet : ${objets}">
+                <td th:each="value : ${objet.getAttributesValues()}" th:text="${value}"></td>
+            </tr>
+        </tbody>
+    </table> -->
 </div>
 
 <div th:fragment="modalAjout(type,titres,attributs,newObject)">

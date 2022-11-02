@@ -33,7 +33,7 @@ public class EquipageController {
 		return "publicTemplates/equipage";
 	}
 	
-	@GetMapping("admin/equipage")
+	@GetMapping("admin/equipages")
     public String addequipage(Model model) {
         model.addAttribute("action","equipage");
         model.addAttribute("titres", Equipage.getAttributes());

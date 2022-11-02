@@ -13,12 +13,12 @@
       Liste des équipes
     </h2>
     <h3 class="p-3 is-size-3">Info sur les Participants:</h3>
-    <div class="selected">
-      <select class="form-select form-select p-2" aria-label="Sélectioner une Equipe">
-        <option selected>Select team</option>
-        <option th:each="values:${equipages}" th:text="${values.nom}" th href="${equipage}"></option>
-      </select>
-    </div>
+    
+    
+       
+        <a th:href="@{/equipage(id=${values.id})}" th:each="values:${equipages}" ><button th:text="${values.nom}" class="button is-light"></button> </a>
+      
+    
 
     <div class="p-6">
       <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth p-0">
@@ -39,7 +39,7 @@
   </main>
 
   <footer th:include="fragments/publicfragments :: footer"></footer>
-  <script th:src="@{/js/equipage.js}"></script>
+
 </body>
 
 </html>
