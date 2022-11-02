@@ -25,4 +25,8 @@ public class CourseService {
 	public Optional<Course> getCourse(int id){
 		return cr.findById(id);
 	}
+
+    public void removeCourse(int id){
+        cr.deleteById(id);
+    }
 }

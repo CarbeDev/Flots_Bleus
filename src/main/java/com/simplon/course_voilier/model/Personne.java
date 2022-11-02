@@ -1,7 +1,9 @@
 package com.simplon.course_voilier.model;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,10 +46,14 @@ public class Personne implements Model{
  
 	public ArrayList<String> getAttributesValues() {
 		ArrayList<String> r = new ArrayList<>();
+
+        Locale locale = new Locale("fr", "FR");
+        DateFormat dateformat = DateFormat.getDateInstance(DateFormat.DEFAULT,locale);
 		
 		r.add(String.valueOf(this.id));
 		r.add(this.nom);
-		r.add(String.valueOf(this.dateNaissance));
+        r.add(this.prenom);
+		r.add(dateformat.format(this.dateNaissance));
 		r.add(this.role.getNom());
 		r.add(this.equipage.getNom());
 		

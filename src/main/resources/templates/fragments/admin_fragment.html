@@ -8,9 +8,7 @@
 <div th:fragment="lateral_menu">
     <div class="has-text-light side-menu">
         <aside class="menu">
-
-            <p th:text="${identifiant}"></p>
-            <a th:href="@{/admin/deconnexion}" class="has-text-white">Se déconnecter</a>
+        <a th:href="@{/logout}" class="has-text-white">Se déconnecter</a>
 
                 <p class="menu-label">Courses</p>
                 <ul class="menu-list">
@@ -43,7 +41,7 @@
 </div>
 
 <div th:fragment="tableau (titres,objets)">
-    <button class="js-modal-trigger button is-success" data-target="modalAjout">Ajouter +</button>
+    <button class="js-modal-trigger button is-success" data-target="modalAjout">Ajouter +</button><br>
     <table class="table">
         <thead>
             <tr>
@@ -52,7 +50,7 @@
         </thead>
         <tbody>
             <tr th:each="objet : ${objets}">
-                <td th:each="value : ${objet.getAttributesValues()}" th:text="${value}"></td>
+            <td th:each="value : ${objet.getAttributesValues()}"><a th:href="@{${action} + '/' + ${objet.id}}" th:text="${value}"></a></td>
             </tr>
         </tbody>
     </table>

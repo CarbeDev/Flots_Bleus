@@ -2,6 +2,7 @@ package com.simplon.course_voilier.controller;
 
 import java.util.ArrayList;
 
+import com.simplon.course_voilier.model.key.InscriptionKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,9 +59,23 @@ public class CourseController {
 	
 	@GetMapping("/admin/courses/{id}")
 	public String updateCourses(@PathVariable int id,Model model) {
-		return "update_course";
+
+        model.addAttribute("course", cs.getCourse(id).get());
+		return "adminTemplates/update_course";
 	}
-	
+
+    @PostMapping("/admin/courses/{id}/modif")
+    public String updateCourse(@ModelAttribute Course course){
+        cs.addCourse(course);
+        return "redirect:/admin/courses/"+course.getId();
+    }
+
+    @GetMapping("/admin/courses/{id}/suppression")
+	public String removeCourse(@PathVariable int id){
+        cs.removeCourse(id);
+        return "redirect:/admin/courses";
+    }
+
 	@GetMapping("/admin/courses/{id}/inscription")
 	public String inscriptionbyCourse(@PathVariable int id, Model model) {
 		Inscription inscription = new Inscription();
@@ -74,6 +89,25 @@ public class CourseController {
 		
 		return "adminTemplates/gestion";
 	}
+
+    @PostMapping("/admin/courses/{id}/inscriptions/ajout")
+    public String addInscription(@PathVariable int id, @ModelAttribute InscriptionKey ik, Model model) {
+
+        Inscription inscription = new Inscription();
+
+        ik.setCourse(id);
+
+        inscription.setId(ik);
+        inscription.setDesistement(false);
+
+        for(Epreuve epreuve : es.getEpreuve(id)) {
+            rs.addResultat(new Resultat(epreuve,vs.getVoilier(id).get()));
+        }
+
+        is.addInscription(inscription);
+
+        return "redirect:/admin/courses/"+id+"/inscriptions";
+    }
 	
 	@GetMapping("/admin/courses/{id}/epreuves")
 	public String epreuvebyCourse(@PathVariable int id, Model model) {
