@@ -62,7 +62,19 @@ public class CourseController {
         model.addAttribute("course", cs.getCourse(id).get());
 		return "adminTemplates/update_course";
 	}
-	
+
+    @PostMapping("/admin/courses/{id}/modif")
+    public String updateCourse(@ModelAttribute Course course){
+        cs.addCourse(course);
+        return "redirect:/admin/courses/"+course.getId();
+    }
+
+    @GetMapping("/admin/courses/{id}/suppression")
+	public String removeCourse(@PathVariable int id){
+        cs.removeCourse(id);
+        return "redirect:/admin/courses";
+    }
+
 	@GetMapping("/admin/courses/{id}/inscription")
 	public String inscriptionbyCourse(@PathVariable int id, Model model) {
 		Inscription inscription = new Inscription();

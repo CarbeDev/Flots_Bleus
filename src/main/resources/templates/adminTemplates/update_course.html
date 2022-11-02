@@ -7,6 +7,12 @@
     </div>
     <div class="column is-6">
         <h2 class="title is-2 has-text-white " th:text="${course.nom}"></h2>
+        <form th:action="@{'/admin/courses/' + ${course.id} + '/modif'}" method="post" th:object="${course}">
+            <input class="input" type="text" th:value="${course.nom}" name="nom">
+            <input class="input" type="number" th:value="${course.annee}" name="annee">
+            <button type="submit" class="button is-warning">Modifier</button>
+        </form>
+        <a class="has-text-danger" th:href="@{'/admin/courses/' + ${course.id} + '/suppression'}">Supprimer</a><br>
         <a th:href="@{'/admin/courses/' + ${course.id} + '/epreuves'}">Gérer les épreuves</a><br>
         <a th:href="@{'/admin/courses/' + ${course.id} + '/inscription'}">Gérer les inscriptions</a>
     </div>
