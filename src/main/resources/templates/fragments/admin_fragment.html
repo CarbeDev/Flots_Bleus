@@ -8,7 +8,7 @@
 <div th:fragment="lateral_menu">
     <div class="has-text-light side-menu">
         <aside class="menu">
-        <a th:href="@{/j_spring_security_logout}" class="has-text-white">Se déconnecter</a>
+        <a th:href="@{/logout}" class="has-text-white">Se déconnecter</a>
 
                 <p class="menu-label">Courses</p>
                 <ul class="menu-list">
@@ -50,7 +50,7 @@
         </thead>
         <tbody>
             <tr th:each="objet : ${objets}">
-                <td th:each="value : ${objet.getAttributesValues()}" th:text="${value}"></td>
+            <td th:each="value : ${objet.getAttributesValues()}"><a th:href="@{${action} + '/' + ${objet.id}}" th:text="${value}"></a></td>
             </tr>
         </tbody>
     </table>
