@@ -110,7 +110,7 @@ public class CourseController {
         inscription.setDesistement(false);
 
         for(Epreuve epreuve : es.getEpreuve(id)) {
-            rs.addResultat(new Resultat(epreuve,vs.getVoilier(inscription.getVoilier().getId()).get()));
+            rs.addResultat(new Resultat(epreuve,vs.getVoilier(ik.getVoilier()).get()));
         }
 
         is.addInscription(inscription);
