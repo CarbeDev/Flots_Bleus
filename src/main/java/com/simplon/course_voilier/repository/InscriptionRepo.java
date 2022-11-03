@@ -9,5 +9,5 @@ import com.simplon.course_voilier.model.key.InscriptionKey;
 @Repository
 public interface InscriptionRepo extends CrudRepository<Inscription, InscriptionKey>{
 
-	Iterable<Inscription> findByCourse_Id(int id);
+    Iterable<Inscription> findByIdCourse(int id);
 }

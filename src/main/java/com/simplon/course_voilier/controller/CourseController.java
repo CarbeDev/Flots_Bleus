@@ -2,7 +2,9 @@ package com.simplon.course_voilier.controller;
 
 import java.util.ArrayList;
 
+import com.simplon.course_voilier.model.Resultat;
 import com.simplon.course_voilier.model.key.InscriptionKey;
+import com.simplon.course_voilier.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,9 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.simplon.course_voilier.model.Course;
 import com.simplon.course_voilier.model.Epreuve;
 import com.simplon.course_voilier.model.Inscription;
-import com.simplon.course_voilier.service.CourseService;
-import com.simplon.course_voilier.service.EpreuveService;
-import com.simplon.course_voilier.service.InscriptionService;
 
 @Controller
 public class CourseController {
@@ -27,7 +26,11 @@ public class CourseController {
 	InscriptionService is;
 	@Autowired
 	EpreuveService es;
-	
+	@Autowired
+	ResultatService rs;
+    @Autowired
+	VoilierService vs;
+
 	@GetMapping("/courses")
 	public String getAllCourses(Model model) {
 	 model.addAttribute("courses",cs.getAllCourse());
@@ -76,22 +79,25 @@ public class CourseController {
         return "redirect:/admin/courses";
     }
 
-	@GetMapping("/admin/courses/{id}/inscription")
+	@GetMapping("/admin/courses/{id}/inscriptions")
 	public String inscriptionbyCourse(@PathVariable int id, Model model) {
-		Inscription inscription = new Inscription();
-		inscription.setCourse(cs.getCourse(id).get());
-		
-		model.addAttribute("action", "inscription");
-		model.addAttribute("titres", Inscription.getAttributes());
-		model.addAttribute("objets", is.getInscription(id));
-		model.addAttribute("attributs", Inscription.getAttributesType());
-		model.addAttribute("newObject", inscription);
+        ArrayList<String> titres = Inscription.getAttributes();
+        titres.remove(2);
+
+        ArrayList<String> attributs = Inscription.getAttributesType();
+        attributs.remove(2);
+
+        model.addAttribute("action", "/admin/courses/"+id+"/inscriptions/ajout");
+        model.addAttribute("titres", titres);
+        model.addAttribute("objets", is.getInscription(id));
+        model.addAttribute("attributs", attributs);
+        model.addAttribute("newObject", new InscriptionKey());
 		
 		return "adminTemplates/gestion";
 	}
 
     @PostMapping("/admin/courses/{id}/inscriptions/ajout")
-    public String addInscription(@PathVariable int id, @ModelAttribute InscriptionKey ik, Model model) {
+    public String addInscription(@PathVariable int id, @ModelAttribute InscriptionKey ik) {
 
         Inscription inscription = new Inscription();
 
