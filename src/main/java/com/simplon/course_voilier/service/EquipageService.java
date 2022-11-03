@@ -3,6 +3,7 @@ package com.simplon.course_voilier.service;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.simplon.course_voilier.model.Equipage;

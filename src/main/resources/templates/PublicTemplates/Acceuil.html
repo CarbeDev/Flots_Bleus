@@ -5,40 +5,36 @@
     <!-- Header fragments -->
     <header th:include="fragments/publicfragments :: header"></header>
 
-  <body>
-   
-    
-    <main>
-      <section class="section1">
-        <h3 class=" h-title is-size-2">Mais qui sommes Nous ?</h3>
-        <p class="p-acceuil">
-          Fondée en 1991 l"Association Flots Bleus, organise des courses de
-          voilier. Son président Robert Boulard est un passionnée de voile qui a
-          oeuvré pour faire de sa passion son métier. Dans un premier temps au
-          niveau national amateur, puis au fil des années il c'est forgé une
-          solide réputation. Aujourd'hui Flots Bleus est devenu incontournable
-          dans le monde de la courses de voilier amateur mais aussi
-          professionnelle. Mais malgré le succsés Flots Bleus reste une
-          association ou humilité est le maitre mots .
-        </p>
-      </section>
-      <section class=" section2">
-        <h3 class=" h-title is-size-2">Quoi de neuf?</h3>
-        <p class=" p-acceuil hero is-small p-2">
-          Flots Bleus a décidé cette année de passer un cap,avec le lancement de
-          son premier site.Avec cette initiative,nous voulons modernisé notre
-          mode de communication et de cette façon,nos membres et future membres
-          auront un accès aux différentes informations concernant Flots
-          Bleus.Avec l'aide de ces nouvelles technologie l'association veux
-          avant tous améliorer sa qualité de service en facilitant les
-          démaraches des participants. Malgré les années qui passe Flots Bleus
-          matiens le cap et ceux contre vent et marré.
-        </p>
-      </section>
-      <div class="logo-prime p-1">
-        <img class="acceuil-big-logo" th:src="@{/images/logo.png}" alt="logo">
-      </div>
-    </main>
-    <footer th:include="fragments/publicfragments :: footer"></footer>
-  </body>
+    <body>
+      <main class="fond-bateaux columns is-multiline">
+        <section class="section1">
+          <h3 class="h-title is-size-2">Mais qui sommes Nous ?</h3>
+          <p class="p-acceuil is-multiline">
+            Fondée en 1991 l'Association Flots Bleus, organise des courses de
+            voilier. Son président Robert Boulard est un passionné de voile qui
+            a œuvré pour faire de sa passion son métier. Dans un premier temps
+            au niveau national amateur, puis au fil des années, il s'est forgé
+            une solide réputation. Aujourd'hui, Flots Bleus est devenu
+            incontournable dans le monde de la course de voilier amateur, mais
+            aussi professionnelle. Mais malgré le succès, Flots Bleus reste une
+            association oú humilité est le maitre mots.
+          </p>
+        </section>
+        <section class="section2">
+          <h3 class="h-title is-size-2">Quoi de neuf?</h3>
+          <p class="p-acceuil hero is-small p-2 columns is-multiline">
+            Flots Bleus a décidé cette année de passer un cap, avec le lancement
+            de son premier site. Avec cette initiative, nous voulons moderniser
+            notre mode de communication et de cette façon, nos membres et
+            futures membres auront un accès aux différentes informations
+            concernant Flots Bleus. Avec l'aide de ces nouvelles technologies
+            l'association veut avant tout, améliorer sa qualité de service en
+            facilitant les démarches des participants. Malgré les années qui
+            passent, Flots Bleus garde le cap et ce, contre vents et marrés.
+          </p>
+        </section>
+      </main>
+      <footer th:include="fragments/publicfragments :: footer"></footer>
+    </body>
+  </html>
 </html>

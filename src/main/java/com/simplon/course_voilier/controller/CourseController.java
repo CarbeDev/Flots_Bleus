@@ -140,4 +140,5 @@ public class CourseController {
 		
 		return "redirect:admin/course/" + id + "/epreuves";
 	}
+	
 }
