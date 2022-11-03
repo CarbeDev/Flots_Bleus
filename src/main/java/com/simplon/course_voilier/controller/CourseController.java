@@ -141,7 +141,7 @@ public class CourseController {
 		epreuve.setCourse(cs.getCourse(id).get());
 		es.addEpreuve(epreuve);
 		
-		return "redirect:admin/course/" + id + "/epreuves";
+		return "redirect:/admin/course/" + id + "/epreuves";
 	}
 
     @GetMapping("/admin/courses/{course}/epreuves/{id}")
