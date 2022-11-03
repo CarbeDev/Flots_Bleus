@@ -87,7 +87,7 @@ public class CourseController {
         ArrayList<String> attributs = Inscription.getAttributesType();
         attributs.remove(2);
 
-        model.addAttribute("action", "/admin/courses/"+id+"/inscriptions/ajout");
+        model.addAttribute("action", "inscriptions");
         model.addAttribute("titres", titres);
         model.addAttribute("objets", is.getInscription(id));
         model.addAttribute("attributs", attributs);
