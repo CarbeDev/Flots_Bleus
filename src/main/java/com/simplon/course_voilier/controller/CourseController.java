@@ -17,6 +17,9 @@ import com.simplon.course_voilier.model.Course;
 import com.simplon.course_voilier.model.Epreuve;
 import com.simplon.course_voilier.model.Inscription;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.websocket.server.PathParam;
+
 @Controller
 public class CourseController {
 
@@ -107,7 +110,7 @@ public class CourseController {
         inscription.setDesistement(false);
 
         for(Epreuve epreuve : es.getEpreuve(id)) {
-            rs.addResultat(new Resultat(epreuve,vs.getVoilier(id).get()));
+            rs.addResultat(new Resultat(epreuve,vs.getVoilier(inscription.getVoilier().getId()).get()));
         }
 
         is.addInscription(inscription);
@@ -124,7 +127,7 @@ public class CourseController {
 		ArrayList<String> attributs = Epreuve.getAttributesType();
 		attributs.remove(4);
 		
-		model.addAttribute("action", "/admin/courses/"+id+"/epreuves/ajout");
+		model.addAttribute("action", "epreuves");
 		model.addAttribute("titres", titres);
 		model.addAttribute("objets", es.getEpreuve(id));
 		model.addAttribute("attributs", attributs);
@@ -140,5 +143,26 @@ public class CourseController {
 		
 		return "redirect:admin/course/" + id + "/epreuves";
 	}
+
+    @GetMapping("/admin/courses/{course}/epreuves/{id}")
+    public String  updateEpreuve(@PathVariable int id, @PathVariable int course, Model model) {
+
+        model.addAttribute("action", "/admin/resultat");
+        model.addAttribute("titres", Epreuve.getAttributes());
+        model.addAttribute("attributs", Epreuve.getAttributesType());
+        model.addAttribute("objet", es.getEpreuveById(id));
+        model.addAttribute("idEpreuve", id);
+        model.addAttribute("course", course);
+
+        model.addAttribute("resultats", rs.getResultat(id));
+
+        return "adminTemplates/update_epreuve";
+    }
 	
+    @PostMapping("/admin/resultat/update/{idCourse}")
+    public String updateResultat(HttpServletRequest request, @PathVariable int idCourse) {
+
+        rs.updateResultat(request.getParameter("temps"), Integer.valueOf(request.getParameter("voilier")), Integer.valueOf(request.getParameter("id")));
+        return "redirect:/admin/courses/" + idCourse + "/epreuves/" + request.getParameter("id");
+    }
 }
