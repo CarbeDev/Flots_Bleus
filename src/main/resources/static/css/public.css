@@ -16,6 +16,11 @@ img {
 }
 /* ***************************************************************************** */
 
+ /* navbar */
+.hero-head{
+  box-shadow: 5px 5px 10px grey;
+}
+
 /* Main de toutes les pages  */
 main {
   /* display: flex; */
@@ -24,14 +29,15 @@ main {
   background-color: #49adba;
   padding: 40px;
   font-family: "Roboto", sans-serif;
-  border: solid 1px #f4a261;
+  
+  /* box-shadow: 5px 5px 10px grey; */
 }
 
 /* ***************************************************************************** */
 
 /* PAGE CARD */
 p {
-  color: #f4a261;
+  color: #ffffff;
   text-align: center;
   font-family: "Roboto", sans-serif;
 
@@ -111,6 +117,15 @@ footer {
 
 /* PAGE ACCEUIL */
 
+
+.fond-bateaux{
+height: 800px;
+background-image: url(http://localhost:9000/images/logo.png);
+background-size: contain;
+background-repeat: no-repeat;
+background-position: 50% 50%;
+background-color:#ffffff
+}
 .section1,.section2{
     text-align: center;
 }
@@ -122,5 +137,17 @@ footer {
 .logo-prime{
     text-align: center;
     width: 100%;
-    background-color: #40698c;
+    background-color:#ffffff;
+}
+
+.h-title{
+  font-weight:bold;
+  font-family: "Roboto", sans-serif;
+  
+}
+
+.p-acceuil{
+  color:black;
+  font-family: "Roboto", sans-serif;
+  
 }

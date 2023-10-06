@@ -20,18 +20,18 @@ public class EntrepriseController {
 	public String getSponsor(Model model) {
 		
 		model.addAttribute("sponsors", es.getAllSponsor());
-		return "sponsors";
+		return "publicTemplates/sponsors";
 	}
 	
 	@GetMapping("/admin/sponsors")
 	public String adminSponsor(Model model) {
 		
-		model.addAttribute("type", "sponsors");
+		model.addAttribute("action", "sponsors");
 		model.addAttribute("titres", Entreprise.getAttributes());
 		model.addAttribute("objets", es.getAllSponsor());
 		model.addAttribute("attributs", Entreprise.getAttributesType());
 		model.addAttribute("newObject", new Entreprise());
-		return "gestion";
+		return "adminTemplates/gestion";
 	}
 	
 	@PostMapping("/admin/sponsors/ajout")
@@ -40,4 +40,6 @@ public class EntrepriseController {
 		
 		return "redirect:/admin/sponsors";
 	}
+	
 }
+;

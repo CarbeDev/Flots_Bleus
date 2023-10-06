@@ -24,12 +24,12 @@ public class VoilierController {
 	
 	@GetMapping("admin/voiliers")
 	public String adminVoilier(Model model) {
-		model.addAttribute("type", "voiliers");
+		model.addAttribute("action", "voiliers");
 		model.addAttribute("titres", Voilier.getAttributes());
 		model.addAttribute("objets", vs.getAllVoiliers());
 		model.addAttribute("attributs", Voilier.getAttributesType());
 		model.addAttribute("newObject", new Voilier());
-		return "gestion";
+		return "adminTemplates/gestion";
 	}
 	
 	@PostMapping("admin/voiliers/ajout")
@@ -47,7 +47,7 @@ public class VoilierController {
 		model.addAttribute("attributs", TypeVoilier.getAttributesType());
 		model.addAttribute("newObject", new TypeVoilier());
 		
-		return "gestion";
+		return "adminTemplates/gestion";
 	}
 	
 	@PostMapping("admin/type_voilier/ajout")

@@ -1,7 +1,9 @@
 package com.simplon.course_voilier.model;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -29,6 +33,7 @@ public class Personne implements Model{
 	private String prenom;
 
 	@Column(name="date_de_naissance")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateNaissance;
 	
 	@ManyToOne
@@ -41,10 +46,14 @@ public class Personne implements Model{
  
 	public ArrayList<String> getAttributesValues() {
 		ArrayList<String> r = new ArrayList<>();
+
+        Locale locale = new Locale("fr", "FR");
+        DateFormat dateformat = DateFormat.getDateInstance(DateFormat.DEFAULT,locale);
 		
 		r.add(String.valueOf(this.id));
 		r.add(this.nom);
-		r.add(String.valueOf(this.dateNaissance));
+        r.add(this.prenom);
+		r.add(dateformat.format(this.dateNaissance));
 		r.add(this.role.getNom());
 		r.add(this.equipage.getNom());
 		

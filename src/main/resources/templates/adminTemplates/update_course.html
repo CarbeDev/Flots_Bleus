@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="/fragments/admin_fragment :: header"></head>
+<body>
+<div class="columns">
+    <div class="column is-2">
+        <div th:include="/../fragments/admin_fragment :: lateral_menu"></div>
+    </div>
+    <div class="column is-6">
+        <h2 class="title is-2 has-text-white " th:text="${course.nom}"></h2>
+        <form th:action="@{'/admin/courses/' + ${course.id} + '/modif'}" method="post" th:object="${course}">
+            <input class="input" type="text" th:value="${course.nom}" name="nom">
+            <input class="input" type="number" th:value="${course.annee}" name="annee">
+            <button type="submit" class="button is-warning">Modifier</button>
+        </form>
+        <a class="has-text-danger" th:href="@{'/admin/courses/' + ${course.id} + '/suppression'}">Supprimer</a><br>
+        <a th:href="@{'/admin/courses/' + ${course.id} + '/epreuves'}">Gérer les épreuves</a><br>
+        <a th:href="@{'/admin/courses/' + ${course.id} + '/inscriptions'}">Gérer les inscriptions</a>
+    </div>
+
+</div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

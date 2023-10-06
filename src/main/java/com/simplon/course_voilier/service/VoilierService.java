@@ -25,4 +25,5 @@ public class VoilierService {
 	public Optional<Voilier> getVoilier(int i) {
 		return vr.findById(i);
 	}
+	
 }

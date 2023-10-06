@@ -2,15 +2,13 @@
     <meta charset="UTF-8" />
     <title>Flots bleus | Admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin.css}"/>
 </head>
 
 <div th:fragment="lateral_menu">
-    <div class="has-background-dark has-text-light">
+    <div class="has-text-light side-menu">
         <aside class="menu">
-
-            <p th:text="${identifiant}"></p>
-            <a th:href="@{/admin/deconnexion}" class="has-text-white">Se déconnecter</a>
+        <a th:href="@{/logout}" class="has-text-white">Se déconnecter</a>
 
                 <p class="menu-label">Courses</p>
                 <ul class="menu-list">
@@ -28,7 +26,7 @@
                 
                 <p class="menu-label">Equipages</p>
                 <ul class="menu-list">
-                    <li><a th:href="@{/admin/courses}">Equipages</a></li>
+                    <li><a th:href="@{/admin/equipages}">Equipages</a></li>
                     <li><a th:href="@{/admin/membres}">Membres</a></li>
                     <li><a th:href="@{/admin/role_membre}">Roles de membres</a></li>
                 </ul>
@@ -43,7 +41,23 @@
 </div>
 
 <div th:fragment="tableau (titres,objets)">
-    <button class="js-modal-trigger button is-success" data-target="modalAjout">Ajouter +</button>
+    <button class="js-modal-trigger button is-success" data-target="modalAjout">Ajouter +</button><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <td th:each="titre : ${titres}" th:text="${titre}"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="objet : ${objets}">
+            <td th:each="value : ${objet.getAttributesValues()}"><a th:href="@{${action} + '/' + ${objet.id}}" th:text="${value}"></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- <div th:fragment="tableau (titres,objets)">
+    <button class="js-modal-trigger button is-success" data-target="modalAjout">Modifier +</button>
     <table class="table">
         <thead>
             <tr>
@@ -55,14 +69,14 @@
                 <td th:each="value : ${objet.getAttributesValues()}" th:text="${value}"></td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
 </div>
 
 <div th:fragment="modalAjout(type,titres,attributs,newObject)">
     <div class="modal" id="modalAjout">
         <div class="modal-background"></div>
         <div class="modal-content has-background-white">
-            <form th:action="@{${action}}" method="post" class="box" th:object="${newObject}">
+            <form th:action="@{${action} + '/ajout'}" method="post" class="box" th:object="${newObject}">
                 <div th:each="attribut, stat : ${attributs}" th:if="${titres[stat.index]} != 'id'">
                     <div class="field">
                         <label class="label" th:text="${titres[stat.index]}"></label>

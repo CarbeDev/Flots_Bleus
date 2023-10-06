@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-  <head th:include="fragments/publicfragments :: head"></head>
-  <!-- Header fragments -->
-  <header th:include="fragments/publicfragments :: header"></header>
-  
 
-  <body>
-    <main class="p-6">
-      <!-- Separation du titre h2 et du from select du main pour favoriser affichage  -->
-   
-      <h2 class="is-flex is-justify-content-center p-4 is-size-2">Liste des équipes</h2>
-      <h3 class="p-3 is-size-3">Info sur les Participants:</h3>
-      <div class="selected">
-        <select
-          class="form-select form-select p-2"
-          aria-label="Sélectioner une Equipe">
-          <option selected>Select team</option>
-          <option
-            th:each="values:${equipages}"
-            th:text="${values.nom}"
-            th
-            href="${equipage}"></option>
-        </select>
-      </div>
+<head th:include="fragments/publicfragments :: head"></head>
+<!-- Header fragments -->
+<header th:include="fragments/publicfragments :: header"></header>
 
-      <div class=" p-6">
-        <table
-          class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth p-0">
-          <tr>
-            <th class="p-3 has-text-centered">Prenom</th>
-            <th class="p-3 has-text-centered">Nom</th>
-            <th class="p-3 has-text-centered">Age</th>
-            <th class="p-3 has-text-centered">Rôle</th>
-          </tr>
-          <tr th:each="personne : ${equipage.personnes}">
-            <td th:text="${personne.prenom}"></td>
-            <td th:text="${personne.nom}"></td>
-            <td th:text="${personne.dateNaissance}"></td>
-            <td th:text="${personne.role.nom}"></td>
-          </tr>
-        </table>
-      </div>
-    </main>
+<body>
+  <main class="p-6">
+    <!-- Separation du titre h2 et du from select du main pour favoriser affichage  -->
 
-    <footer th:include="fragments/publicfragments :: footer"></footer>
-    <script th:src="@{/js/equipage.js}"></script>
-     
-  </body>
+    <h2 class="is-flex is-justify-content-center p-4 is-size-2">
+      Liste des équipes
+    </h2>
+    <h3 class="p-3 is-size-3">Info sur les Participants:</h3>
+    
+    
+       
+        <a th:href="@{/equipage(id=${values.id})}" th:each="values:${equipages}" ><button th:text="${values.nom}" class="button is-light"></button> </a>
+      
+    
+
+    <div class="p-6">
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth p-0">
+        <tr>
+          <th class="p-3 has-text-centered">Prenom</th>
+          <th class="p-3 has-text-centered">Nom</th>
+          <th class="p-3 has-text-centered">Age</th>
+          <th class="p-3 has-text-centered">Rôle</th>
+        </tr>
+        <tr th:each="personne : ${equipage.personnes}">
+          <td th:text="${personne.prenom}"></td>
+          <td th:text="${personne.nom}"></td>
+          <td th:text="${personne.dateNaissance}"></td>
+          <td th:text="${personne.role.nom}"></td>
+        </tr>
+      </table>
+    </div>
+  </main>
+
+  <footer th:include="fragments/publicfragments :: footer"></footer>
+
+</body>
+
 </html>

@@ -1,17 +1,20 @@
 package com.simplon.course_voilier.model.key;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
+@Data
 public class InscriptionKey implements Serializable{
 
 	@Column(name="id_course")
-	private int idCourse;
+	private int course;
 	@Column(name="id_voilier")
-	private int idVoilier;
+	private int voilier;
 	@Column(name="id_equipage")
-	private int idEquipage;
+	private int equipage;
 }

@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="/fragments/admin_fragment :: header"></head>
+<body>
+<div class="columns">
+    <div class="column is-2">
+        <div th:include="/fragments/admin_fragment :: lateral_menu"></div>
+    </div>
+    <div class="column is-9">
+        <!-- <div th:include="/fragments/admin_fragment :: update_form"></div> -->
+        <h2 class="title is-2">Résultat</h2>
+
+        <div th:each="resultat : ${resultats}">
+            <label class="label is-capitalized" th:text="${resultat.voilier.nom}"></label>
+            <form th:action="@{'/admin/resultat/update/' + ${course}}" method="post">
+
+                <input type="hidden" name="voilier" th:value="${resultat.id.voilier}">
+                <input type="hidden" name="id" th:value="${idEpreuve}">
+
+                <div class="field">
+                    <label class="label">Temps</label>
+                    <div class="control">
+                        <input name="temps" class="input" type="text" th:value="${resultat.temps}"
+                               th:if="${resultat.temps != null}">
+                        <input name="temps" class="input" type="text" placeholder="HH:MM:SS"
+                               th:unless="${resultat.temps != null}">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link" type="submit">Valider</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

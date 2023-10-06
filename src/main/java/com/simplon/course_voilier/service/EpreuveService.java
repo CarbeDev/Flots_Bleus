@@ -1,5 +1,7 @@
 package com.simplon.course_voilier.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,9 @@ public class EpreuveService {
 	
 	public void addEpreuve(Epreuve epreuve) {
 		er.save(epreuve);
+	}
+
+	public Optional<Epreuve> getEpreuveById(int idEpreuve){
+		return er.findById(idEpreuve);
 	}
 }

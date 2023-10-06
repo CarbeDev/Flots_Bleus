@@ -1,20 +1,23 @@
 <!-- Head pages Users -->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head th:fragment="head">
-    <!DOCTYPE html>
-    <html>
-    <html xmlns:th="http://www.thymeleaf.org">
-    <html lang="en">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flots bleus | Admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    
 
     <!-- <link rel="stylesheet" th:href="@{/css/equipage.css}" /> -->
     <link rel="stylesheet" th:href="@{/css/public.css}" />
     <!-- <link rel="stylesheet" th:href="@{/css/sponsors.css}" />
     <link rel="stylesheet" th:href="@{/css/courses.css}" /> -->
-
+    <script defer th:src="@{/js/navbar.js}"></script>
+</head>
 
 <!-- Header et Navbar User -->
 <header th:fragment="header">
@@ -23,7 +26,7 @@
             <nav class="navbar cards">
                 <div class="container">
                     <div class="navbar-brand is-size-4">
-                        <a class="navbar-item"th:href="@{/acceuil}">FLOTS BLEUS</a>
+                        <a class="navbar-item" th:href="@{/acceuil}">FLOTS BLEUS</a>
                         <img th:src="@{/images/logo.png}" alt="Logo" />
                         <span class="navbar-burger" data-target="navbarMenuHeroB">
                             <span></span>
@@ -32,19 +35,20 @@
                             <span></span>
                         </span>
                     </div>
-                    
+
                     <div id="navbarMenuHeroB" class="navbar-menu">
                         <div class="navbar-end">
                             <a class="navbar-item is-active" th:href="@{/acceuil}">Acceuil</a>
                             <a class="navbar-item" th:href="@{/voiliers}">Voiliers</a>
                             <a class="navbar-item" th:href="@{/courses}">Course</a>
                             <a class="navbar-item" th:href="@{/equipage?id=1}">Equipage</a>
-                            <a class="navbar-item" th:href="@{/sponsors}">Sponsors</a>
-                        <!-- </div> -->
-                        
+                            <!-- <a class="navbar-item" th:href="@{/sponsors}">Sponsors</a> -->
+                        </div>
                     </div>
                 </div>
             </nav>
+        </div>
+    </div>
 </header>
 
 
@@ -57,24 +61,25 @@
     <div class="content has-text-centered">
         <div class="columns p-4">
             <div class="column has-text-centered">
-                <h6 class="title is-3">Sponsors Officel</h6>
-                
-                <img class="image is-96x96" th:src="@{/images/figaro.png}"        alt="logo-figaro" />
+                <h6 class="title is-3">Sponsors Officiel</h6>
+
+                <img class="image is-96x96" th:src="@{/images/figaro.png}" alt="logo-figaro" />
                 <img class="image is-96x96" th:src="@{/images/logoSponsors2.png}" alt="logo vendeglobe" />
                 <img class="image is-96x96" th:src="@{/images/sponsorslogo3.png}" alt="logo bateau" />
                 <img class="image is-96x96" th:src="@{/images/sponsorslogo5.png}" alt="logo bateau" />
             </div>
-            
+
             <!-- Logo des réseaux sociaux -->
-            
+
             <div class="column">
                 <h6 class="title is-3">Réseaux sociaux</h6>
-                <img class="image is-48x48" th:src="@{/img/logo/facebook.png}"th:text="facebook" alt="logo facebook" />
-                <img class="image is-48x48" th:src="@{/img/logo/instagram.png}"th:text="Instagram" alt="logo instagram" />
-                <img class="image is-48x48" th:src="@{/img/logo/twitter.png}"th:text="Twitter" alt="logo twitter" />
-                <img class="image is-48x48" th:src="@{/img/logo/youtube.png}"th:text="Youtube" alt="logo youtube" />
+                <img class="image is-48x48" th:src="@{/img/logo/facebook.png}" th:text="facebook" alt="logo facebook" />
+                <img class="image is-48x48" th:src="@{/img/logo/instagram.png}" th:text="Instagram"
+                    alt="logo instagram" />
+                <img class="image is-48x48" th:src="@{/img/logo/twitter.png}" th:text="Twitter" alt="logo twitter" />
+                <img class="image is-48x48" th:src="@{/img/logo/youtube.png}" th:text="Youtube" alt="logo youtube" />
             </div>
-            
+
             <!-- Coordonneés des flots bleus -->
             <!-- <div class="is-flex is-flex-direction-row is-justify-content-center p-6"></div> -->
             <div class="column">
@@ -87,11 +92,10 @@
                     <p>&copy; Flots Bleus.com</p>
                 </address>
             </div>
+        </div>
+        <!-- <script th:src="@{/js/script.js}"></script> -->
     </div>
-            <!-- <script th:src="@{/js/script.js}"></script> -->
-        <script th:src="@{/js/navbar.js}"></script>
 </footer>
 
-</html>
 
 </html>
